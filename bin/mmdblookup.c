@@ -1,6 +1,10 @@
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
+#ifdef _WIN32
+#ifndef UNICODE
+#define UNICODE
+#endif
 #include "maxminddb.h"
 #include <errno.h>
 #include <getopt.h>
@@ -13,10 +17,6 @@
 #include <string.h>
 #include <time.h>
 
-#ifdef _WIN32
-#ifndef UNICODE
-#define UNICODE
-#endif
 #include <malloc.h>
 #else
 #include <libgen.h>

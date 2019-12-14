@@ -1,6 +1,11 @@
 #if HAVE_CONFIG_H
 #include <config.h>
 #endif
+#ifdef _WIN32
+#ifndef UNICODE
+#define UNICODE
+#endif
+#endif
 #include "data-pool.h"
 #include "maxminddb.h"
 #include "maxminddb-compat-util.h"
@@ -14,9 +19,6 @@
 #include <sys/stat.h>
 
 #ifdef _WIN32
-#ifndef UNICODE
-#define UNICODE
-#endif
 #include <windows.h>
 #include <ws2ipdef.h>
 #else
